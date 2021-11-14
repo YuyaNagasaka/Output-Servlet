@@ -19,13 +19,11 @@ public class RegisterDAO {
 	    Class.forName("com.mysql.jdbc.Driver");//使用するJDBCドライバの指定
 	    conn = DriverManager.getConnection(url,user,password);//データベース接続
 	    System.out.println("DBとの接続成功");
-	    String sql = "INSERT INTO user (id,name,password,output_times) values(?,?,?,?)"; 
+	    String sql = "INSERT INTO user (name,password) values(?,?)"; 
 	    PreparedStatement statement = conn.prepareStatement(sql);//SQLの送信元にSQL文を渡す
 	    //未確定のパラメータに値を代入
-	    statement.setInt(1,info.getId());
-	    statement.setString(2,info.getName());
-	    statement.setString(3, info.getPassword());
-	    statement.setInt(4,info.getOutputTimes());
+	    statement.setString(1,info.getName());
+	    statement.setString(2, info.getPassword());
 	    int result = statement.executeUpdate();//SQL文の実行 追加したデータの行数が戻り値になる
 	      
 	      if(result != 0) {
