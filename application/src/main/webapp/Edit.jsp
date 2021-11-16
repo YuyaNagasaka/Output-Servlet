@@ -1,19 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <title>編集画面</title>
   </head>
   <body>
+    <nav id="nav">
+     <ul style = "display: flex; list-style-type: none; text-align: center;">
+        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Create.jsp">新規投稿</a></li>
+        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Index.jsp">投稿一覧</a></li>
+        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Welcome.jsp">ログアウト</a></li>
+     </ul>
+    </nav>
     <h1>投稿編集画面</h1>
-    <form action = "/UpdateServlet" method="Post">
-      タイトル　　<input type = "text" name="text"><br>
-      説明　　　　<input type = "text" name = "password"><br>
-      キーワード　<input type = "text" name = "keyword"><br>
-      <input type = submit value = "更新">
-    </form>
   </body>
 </html>
