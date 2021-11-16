@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@
      <ul style = "display: flex; list-style-type: none; text-align: center;">
         <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Create.jsp">新規投稿</a></li>
         <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Index.jsp">投稿一覧</a></li>
-        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Welcome.jsp">ログアウト</a></li>
+        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/LogoutServlet">ログアウト</a></li>
      </ul>
     </nav>
     <h1>投稿編集画面</h1>

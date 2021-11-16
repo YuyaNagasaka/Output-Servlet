@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<% String logoutMessage = (String)request.getAttribute("logoutMessage");
+%>
 
 <!DOCTYPE html>
 <html>
@@ -15,6 +17,9 @@
      </ul>
     </nav>
     <h1>Output of Habits ～ 投稿型アウトプットアプリ ～</h1>
+    <% if(logoutMessage != null){%>
+      <p style = "color:lime;"><%= logoutMessage %></p>
+    <%}%>
     <form action = "/application/RegisterServlet" method="get">
       <input type = submit value = "会員登録"><br>
     </form>

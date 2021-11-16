@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <% String loginErrorMessage1 = (String)request.getAttribute("loginErrorMessage1");
    String loginErrorMessage2 = (String)request.getAttribute("loginErrorMessage2");
 %>
@@ -7,7 +7,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <title>ログイン画面</title>
   </head>
   <body>
     <nav id="nav">
