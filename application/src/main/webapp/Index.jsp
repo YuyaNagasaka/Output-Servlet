@@ -1,28 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<% String createSuccessMessage =(String)request.getAttribute("createSuccessMessage");%>
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <title>投稿一覧画面</title>
   </head>
   <body>
-    <table>
-      <tr>
-        <th>タイトル　</th>
-        <th>説明　　　</th>
-        <th>キーワード</th>
-        <th>編集ボタン</th>
-        <th>削除ボタン</th>
-      </tr>
-      <tr>
-        <td>〇〇</td>
-        <td>〇〇</td>
-        <td>〇〇</td>
-        <td>編集</td>
-        <td>削除</td>
-      </tr>
-    </table>
+    <nav id="nav">
+     <ul style = "display: flex; list-style-type: none; text-align: center;">
+        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Create.jsp">新規投稿</a></li>
+        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Index.jsp">投稿一覧</a></li>
+        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Welcome.jsp">ログアウト</a></li>
+     </ul>
+    </nav>
+    <% if(createSuccessMessage != null){%>
+      <p style = "color:lime;"><%= createSuccessMessage %></p>
+    <%}%>
   </body>
 </html>
