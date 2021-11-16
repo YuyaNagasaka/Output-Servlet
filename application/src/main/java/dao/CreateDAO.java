@@ -12,32 +12,35 @@ public class CreateDAO {
   String user = "root";
   String password = "Nagasaka0928";
   Connection conn = null;
-  public void Create(Output info) {
+  int result;
+  public int Create(Output info) {
     try {
 	  Connection conn = null;
 	  Class.forName("com.mysql.jdbc.Driver");//使用するJDBCドライバの指定
 	  conn = DriverManager.getConnection(url,user,password);//データベース接続
 	  System.out.println("DBとの接続成功");
-	  String sql = "INSERT INTO output (title,description,keyword) values(?,?,?)"; 
+	  
+	  String sql = "INSERT INTO output (user_id,title,description,keyword) values(?,?,?,?)"; 
 	  PreparedStatement statement = conn.prepareStatement(sql);//SQLの送信元にSQL文を渡す
 	  //未確定のパラメータに値を代入
-	  statement.setString(1,info.getTitle());
-	  statement.setString(2,info.getDescription());
-	  statement.setString(3,info.getKeyword());
+	  statement.setInt(1,info.getUserId());
+	  statement.setString(2,info.getTitle());
+	  statement.setString(3,info.getDescription());
+	  statement.setString(4,info.getKeyword());
 	  
-	  int result = statement.executeUpdate();//SQL文の実行 追加したデータの行数が戻り値になる
+	  statement.executeUpdate();//SQL文の実行 追加したデータ
 	  
-	  if(result != 0) {
-	    System.out.println("投稿成功");
-	  }else {
-	    System.out.println("投稿失敗");
-	    }
+	  
+	  
+	  return result;
 	}
     catch(SQLException e) {
       e.printStackTrace();
+      return result;
     }
     catch(ClassNotFoundException e) {
       e.printStackTrace();
+      return result;
     }
 	finally {
       if (conn != null){
