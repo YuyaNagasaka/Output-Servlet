@@ -54,11 +54,11 @@ public class CreateServlet extends HttpServlet {
           CreateDAO create = new CreateDAO();
           create.Create(output);
           request.setAttribute("createSuccessMessage","投稿に成功しました");
-          RequestDispatcher dispatcher = request.getRequestDispatcher("/Create.jsp");
+          RequestDispatcher dispatcher = request.getRequestDispatcher("/IndexServlet");
           dispatcher.forward(request,response);
         }else{
           request.setAttribute("createErrorMessage","空白の部分があります。すべての項目を入力してください。");
-          RequestDispatcher dispatcher = request.getRequestDispatcher("/CreateServlet");
+          RequestDispatcher dispatcher = request.getRequestDispatcher("/Create.jsp");
           dispatcher.forward(request,response);
         }
         

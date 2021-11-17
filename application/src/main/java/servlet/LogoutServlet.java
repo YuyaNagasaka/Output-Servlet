@@ -21,7 +21,7 @@ public class LogoutServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       HttpSession session = request.getSession();
       session.invalidate();
-      request.setAttribute("logoutMessage","ログアウトが成功しました");
+      request.setAttribute("logoutMessage","ログアウトに成功しました");
       RequestDispatcher dispatcher = request.getRequestDispatcher("/Welcome.jsp");
       dispatcher.forward(request, response);
 	}

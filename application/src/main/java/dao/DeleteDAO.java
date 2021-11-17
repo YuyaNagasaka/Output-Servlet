@@ -17,7 +17,6 @@ public class DeleteDAO {
 		  try {
 		    Class.forName("com.mysql.jdbc.Driver");//使用するJDBCドライバの指定
 		    conn = DriverManager.getConnection(url,user,password);//データベース接続
-		    System.out.println("DBとの接続成功");
 		    String sql = "DELETE FROM output WHERE id= ?"; 
 		    PreparedStatement statement = conn.prepareStatement(sql);//SQLの送信元にSQL文を渡す
 		    //未確定のパラメータに値を代入

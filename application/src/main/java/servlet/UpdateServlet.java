@@ -37,8 +37,8 @@ public class UpdateServlet extends HttpServlet {
 	  output.setKeyword(keyword);
 	  UpdateDAO update = new UpdateDAO();
 	  update.Update(output);
-	  request.setAttribute("updateSuccessMessage","更新しました");
-	  RequestDispatcher dispatcher = request.getRequestDispatcher("/Create.jsp");
+	  request.setAttribute("updateSuccessMessage","投稿を更新しました");
+	  RequestDispatcher dispatcher = request.getRequestDispatcher("/IndexServlet");
 	  dispatcher.forward(request,response);
 	 
 

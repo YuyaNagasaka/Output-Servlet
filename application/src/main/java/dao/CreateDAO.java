@@ -18,8 +18,6 @@ public class CreateDAO {
 	  Connection conn = null;
 	  Class.forName("com.mysql.jdbc.Driver");//使用するJDBCドライバの指定
 	  conn = DriverManager.getConnection(url,user,password);//データベース接続
-	  System.out.println("DBとの接続成功");
-	  
 	  String sql = "INSERT INTO output (user_id,title,description,keyword) values(?,?,?,?)"; 
 	  PreparedStatement statement = conn.prepareStatement(sql);//SQLの送信元にSQL文を渡す
 	  //未確定のパラメータに値を代入
@@ -27,11 +25,7 @@ public class CreateDAO {
 	  statement.setString(2,info.getTitle());
 	  statement.setString(3,info.getDescription());
 	  statement.setString(4,info.getKeyword());
-	  
-	  statement.executeUpdate();//SQL文の実行 追加したデータ
-	  
-	  
-	  
+	  statement.executeUpdate();//SQL文の実行 追加したデータ  
 	  return result;
 	}
     catch(SQLException e) {

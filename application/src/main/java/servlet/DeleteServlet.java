@@ -27,7 +27,7 @@ public class DeleteServlet extends HttpServlet {
 	  output.setId(id);
 	  DeleteDAO delete = new DeleteDAO();
 	  delete.Delete(output);
-	  request.setAttribute("deleteSuccessMessage","投稿が削除されました");
+	  request.setAttribute("deleteSuccessMessage","投稿を削除しました");
 	  RequestDispatcher dispatchr = request.getRequestDispatcher("/IndexServlet");
 	  dispatchr.forward(request,response);
 	}
