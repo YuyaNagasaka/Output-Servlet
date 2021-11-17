@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<% String createSuccessMessage =(String)request.getAttribute("createSuccessMessage");%>
-<% String deleteSuccessMessage =(String)request.getAttribute("deleteSuccessMessage");%>
-<% String updateSuccessMessage =(String)request.getAttribute("updateSuccessMessage");%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% String deleteSuccessMessage =(String)request.getAttribute("deleteSuccessMessage"); %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,16 +16,9 @@
         <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/LogoutServlet">ログアウト</a></li>
      </ul>
     </nav>
-    <% if(createSuccessMessage != null){%>
-      <p style = "color:lime;"><%= createSuccessMessage %></p>
-    <%}%>
     <% if(deleteSuccessMessage != null){%>
       <p style = "color:red;"><%= deleteSuccessMessage %></p>
     <%}%>
-    <% if(updateSuccessMessage != null){%>
-      <p style = "color:lime;"><%= updateSuccessMessage %></p>
-    <%}%>
-    
     <table>
       <tr>
         <th>タイトル</th>

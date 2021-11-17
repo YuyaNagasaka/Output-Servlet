@@ -3,6 +3,8 @@
 <%String createErrorMessage = (String) request.getAttribute("createErrorMessage");
   String loginSuccessMessage = (String) request.getAttribute("loginSuccessMessage");
   String registerSuccessMessage = (String) request.getAttribute("registerSuccessMessage");
+  String createSuccessMessage =(String)request.getAttribute("createSuccessMessage");
+  String updateSuccessMessage =(String)request.getAttribute("updateSuccessMessage");
 %>
 
 <!DOCTYPE html>
@@ -20,7 +22,13 @@
      </ul>
     </nav>
     <h1>投稿画面</h1>
+     <% if(createSuccessMessage != null){%>
+      <p style = "color:lime;"><%= createSuccessMessage %></p>
+    <%}%>
     
+    <% if(updateSuccessMessage != null){%>
+      <p style = "color:lime;"><%= updateSuccessMessage %></p>
+    <%}%>
     <% if(createErrorMessage != null){%>
       <p style = "color:red;"><%= createErrorMessage %></p>
     <%}%>
