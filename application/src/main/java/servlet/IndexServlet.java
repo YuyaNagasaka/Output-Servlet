@@ -34,6 +34,13 @@ public class IndexServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	}
+		HttpSession session = request.getSession();
+		  User user = (User)session.getAttribute("user");
+		  IndexDAO index = new IndexDAO();
+		  List<Output> outputList = index.Index(user);
+		  request.setAttribute("list", outputList);
+		  RequestDispatcher dispatcher = request.getRequestDispatcher("/Index.jsp");
+		  dispatcher.forward(request, response);
 
-}
+		}
+	}
