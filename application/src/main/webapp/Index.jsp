@@ -22,14 +22,19 @@
         <%= deleteSuccessMessage %>
       </div>
     <%}%>
-    <table>
-      <tr>
+    
+    <h1  class = "mt-5 ml-5">投稿一覧画面</h1>
+    <table class = "table mt-5 ml-5 mr-5">
+      <thead class="thead-light">
+      <tr >
         <th>タイトル</th>
         <th>説明</th>
         <th>関連情報</th>
         <th>削除</th>
         <th>編集</th>
       </tr>
+      </thead>
+      <tbody>
       <c:forEach var="list" items="${list}">
       <tr>
         <td><c:out value="${list.title}"/></td>
@@ -39,6 +44,7 @@
         <td><a href="/application/EditServlet?id=${list.id}&${title=list.title}& ${description=list.description} & keyword = ${list.keyword}">編集</a></td>
       </tr>
       </c:forEach>
+      </tbody>      
     </table>
   </body>
 </html>

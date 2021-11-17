@@ -22,11 +22,11 @@
         <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/LogoutServlet">ログアウト</a></li>
      </ul>
     </nav>
-    <h1>投稿画面</h1>
+    <h1  class = "mt-5 ml-5">投稿画面</h1>
      <% if(createSuccessMessage != null){%>
        <div class="alert alert-success" role="alert">
          <%= createSuccessMessage %>
-       </div>>
+       </div>
     <%}%>
     
     <% if(updateSuccessMessage != null){%>
@@ -44,20 +44,20 @@
     <% if(loginSuccessMessage != null){%>
       <div class="alert alert-success" role="alert">
         <%= loginSuccessMessage %>
-      </div>>
+      </div>
     <%}%>
     
     <% if(registerSuccessMessage != null){%>
       <div class="alert alert-success" role="alert">
         <%= registerSuccessMessage %>
-      </div>>
+      </div>
     <%}%>
     
     <form action = "/application/CreateServlet" method="Post">
-      タイトル　　<input type = "text" name="title"><br>
-      説明　　　　<input type = "text" name = "description"><br>
-      キーワード　<input type = "text" name = "keyword"><br>
-      <input type = submit value = "新規投稿">
+      <div class = "mt-3 ml-5">タイトル　　<input type = "text" name="title"></div>
+      <div class = "mt-3 ml-5">説明　　　　<input type = "text" name = "description"></div>
+      <div class = "mt-3 ml-5">キーワード　<input type = "text" name = "keyword"></div>
+      <button class="btn btn-success btn-lg mt-3 ml-5" type="submit">新規投稿</button>
     </form>   
   </body>
 </html>
