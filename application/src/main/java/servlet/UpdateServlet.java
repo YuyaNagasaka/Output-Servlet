@@ -21,7 +21,6 @@ public class UpdateServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -31,15 +30,39 @@ public class UpdateServlet extends HttpServlet {
 	  String title = request.getParameter("title");
 	  String description = request.getParameter("description");
 	  String keyword = request.getParameter("keyword");
-      output.setId(id);
-	  output.setTitle(title);
-	  output.setDescription(description);
-	  output.setKeyword(keyword);
-	  UpdateDAO update = new UpdateDAO();
-	  update.Update(output);
-	  request.setAttribute("updateSuccessMessage","投稿を更新しました");
-	  RequestDispatcher dispatcher = request.getRequestDispatcher("/IndexServlet");
-	  dispatcher.forward(request,response);
+	  if(!title.isEmpty() && !description.isEmpty() && !keyword.isEmpty()) {
+	    output.setId(id);
+		if(title.length()<=20 ){
+	      output.setTitle(title);
+	    }else{
+	      request.setAttribute("updateTitleErrorMessage","タイトルの文字数が多すぎます。20文字以内に修正してください。");
+	      RequestDispatcher dispatcher = request.getRequestDispatcher("/EditServlet");
+	      dispatcher.forward(request,response); 
+	    }
+	    if(description.length()<=50 ){
+	      output.setDescription(description);
+	    }else{
+	      request.setAttribute("updateDescriptionErrorMessage","説明の文字数が多すぎます。50文字以内に修正してください。");
+	      RequestDispatcher dispatcher = request.getRequestDispatcher("/EditServlet");
+	      dispatcher.forward(request,response); 
+	    }
+	    if(keyword.length()<10 ){
+	      output.setKeyword(keyword);
+	    }else{
+	      request.setAttribute("updateKeywordErrorMessage","キーワードの文字数が多すぎます。10文字以内に修正してください。");
+	      RequestDispatcher dispatcher = request.getRequestDispatcher("/EditServlet");
+	      dispatcher.forward(request,response); 
+	    }
+	    UpdateDAO update = new UpdateDAO();
+	    update.Update(output);
+	    request.setAttribute("updateSuccessMessage","投稿を更新しました");
+	    RequestDispatcher dispatcher = request.getRequestDispatcher("/IndexServlet");
+	    dispatcher.forward(request,response);
+	  }else {
+		request.setAttribute("updateErrorMessage","空白の部分があります。すべての項目を入力してください。");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/EditServlet");
+        dispatcher.forward(request,response);
+	  }
 	 
 
 	}

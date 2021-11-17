@@ -44,9 +44,31 @@ public class CreateServlet extends HttpServlet {
         }
         
         if(!title.isEmpty() && !description.isEmpty() && !keyword.isEmpty()) {
-          output.setTitle(title);
-          output.setDescription(description);
-          output.setKeyword(keyword);
+          
+          if(title.length()<=20 ){
+            output.setTitle(title);
+          }else {
+            request.setAttribute("createTitleErrorMessage","タイトルの文字数が多すぎます。20文字以内に修正してください。");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/Create.jsp");
+            dispatcher.forward(request,response); 
+          }
+          
+          if(description.length()<=50 ){
+            output.setDescription(description);
+          }else {
+              request.setAttribute("createDescriptionErrorMessage","説明の文字数が多すぎます。50文字以内に修正してください。");
+              RequestDispatcher dispatcher = request.getRequestDispatcher("/Create.jsp");
+              dispatcher.forward(request,response); 
+            }
+          
+          if(keyword.length()<10 ){
+            output.setKeyword(keyword);
+          }else {
+              request.setAttribute("createKeywordErrorMessage","キーワードの文字数が多すぎます。10文字以内に修正してください。");
+              RequestDispatcher dispatcher = request.getRequestDispatcher("/Create.jsp");
+              dispatcher.forward(request,response); 
+            }
+          
           if(user_id != 0){
           output.setUserId(user_id);
           }
