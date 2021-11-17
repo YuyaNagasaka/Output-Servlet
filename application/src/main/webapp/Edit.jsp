@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <title>編集画面</title>
+    <link href="Footer.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
@@ -22,6 +23,9 @@
       <div class = "mt-3 ml-5">説明　　　　<input type = "text" name = "description" value = "${output.description}"></div>
       <div class = "mt-3 ml-5">キーワード　<input type = "text" name = "keyword" value = "${output.keyword}"></div>
       <button class="btn btn-success btn-lg mt-3 ml-5" type="submit">更新</button>
-    </form>   
+    </form> 
+    <footer class="footer">
+        <div class="text-white mt-3 ml-5">copyright(c)2021 Yuya Nagasaka</div>
+    </footer>  
   </body>
 </html>
