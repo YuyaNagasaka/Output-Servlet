@@ -2,11 +2,15 @@ package servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import dao.UpdateDAO;
+import model.Output;
 
 @WebServlet("/UpdateServlet")
 public class UpdateServlet extends HttpServlet {
@@ -21,7 +25,22 @@ public class UpdateServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+	  Output output = new Output();
+	  request.setCharacterEncoding("UTF-8");
+      int id = Integer.parseInt(request.getParameter("id"));
+	  String title = request.getParameter("title");
+	  String description = request.getParameter("description");
+	  String keyword = request.getParameter("keyword");
+      output.setId(id);
+	  output.setTitle(title);
+	  output.setDescription(description);
+	  output.setKeyword(keyword);
+	  UpdateDAO update = new UpdateDAO();
+	  update.Update(output);
+	  RequestDispatcher dispatcher = request.getRequestDispatcher("/Index.jsp");
+	  dispatcher.forward(request,response);
+	  request.setAttribute("updateSuccessMessage","更新しました");
+
 	}
 
 }
