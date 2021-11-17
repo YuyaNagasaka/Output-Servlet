@@ -3,7 +3,9 @@
 <%String createErrorMessage = (String) request.getAttribute("createErrorMessage");
   String loginSuccessMessage = (String) request.getAttribute("loginSuccessMessage");
   String registerSuccessMessage = (String) request.getAttribute("registerSuccessMessage");
-  
+  String createTitleErrorMessage = (String) request.getAttribute("createTitleErrorMessage");
+  String createDescriptionErrorMessage = (String) request.getAttribute("createDescriptionErrorMessage");
+  String createKeywordErrorMessage = (String) request.getAttribute("createKeywordErrorMessage");
 %>
 
 <!DOCTYPE html>
@@ -28,6 +30,24 @@
     <% if(createErrorMessage != null){%>
       <div class="alert alert-danger" role="alert">
         <div class = "ml-4"><%= createErrorMessage %></div>
+      </div>
+    <%}%>
+    
+    <% if(createTitleErrorMessage!= null){%>
+      <div class="alert alert-danger" role="alert">
+        <div class = "ml-4"><%= createTitleErrorMessage %></div>
+      </div>
+    <%}%>
+    
+    <% if(createDescriptionErrorMessage != null){%>
+      <div class="alert alert-danger" role="alert">
+        <div class = "ml-4"><%= createDescriptionErrorMessage %></div>
+      </div>
+    <%}%>
+    
+    <% if(createKeywordErrorMessage != null){%>
+      <div class="alert alert-danger" role="alert">
+        <div class = "ml-4"><%= createKeywordErrorMessage %></div>
       </div>
     <%}%>
     

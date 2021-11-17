@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% String updateErrorMessage = (String)request.getAttribute("updateErrorMessage");
+   String updateTitleErrorMessage = (String)request.getAttribute("updateTitleErrorMessage");
+   String updateDescriptionErrorMessage = (String)request.getAttribute("updateDescriptionErrorMessage");
+   String updateKeywordErrorMessage = (String)request.getAttribute("updateKeywordErrorMessage");
+%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,6 +21,26 @@
         <li class ="mr-3"><a href="/application/LogoutServlet" class = "text-white">ログアウト</a></li>
       </ul>
     </nav>
+    <% if(updateErrorMessage != null){%>
+      <div class="alert alert-danger" role="alert"> 
+         <div class = "ml-4"><%= updateErrorMessage %></div>
+      </div>
+    <%}%>
+    <% if(updateTitleErrorMessage != null){%>
+      <div class="alert alert-danger" role="alert"> 
+         <div class = "ml-4"><%= updateTitleErrorMessage %></div>
+      </div>
+    <%}%>
+    <% if(updateDescriptionErrorMessage != null){%>
+      <div class="alert alert-danger" role="alert"> 
+         <div class = "ml-4"><%= updateDescriptionErrorMessage %></div>
+      </div>
+    <%}%>
+    <% if(updateKeywordErrorMessage != null){%>
+      <div class="alert alert-danger" role="alert"> 
+         <div class = "ml-4"><%= updateKeywordErrorMessage %></div>
+      </div>
+    <%}%>
     <h1  class = "mt-5 ml-5">投稿編集画面</h1>
     <form action = "/application/UpdateServlet" method="Post">
       <input type="hidden" name="id" value = "${output.id}">
