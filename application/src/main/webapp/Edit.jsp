@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <nav id="nav">
-     <ul style = "display: flex; list-style-type: none; text-align: center;">
-        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Create.jsp">新規投稿</a></li>
-        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/IndexServlet">投稿一覧</a></li>
-        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/LogoutServlet">ログアウト</a></li>
-     </ul>
+    <nav class="navbar navbar-dark bg-dark">
+      <ul style = "display: flex; list-style-type: none; text-align: center;">
+        <li class = mr-3><a href="/application/Create.jsp" class = "text-white">新規投稿</a></li>
+        <li class ="mr-3"><a href="/application/IndexServlet" class = "text-white">投稿一覧</a></li>
+        <li class ="mr-3"><a href="/application/LogoutServlet" class = "text-white">ログアウト</a></li>
+      </ul>
     </nav>
     <h1  class = "mt-5 ml-5">投稿編集画面</h1>
     <form action = "/application/UpdateServlet" method="Post">

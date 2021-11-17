@@ -58,7 +58,7 @@ public class CreateServlet extends HttpServlet {
           dispatcher.forward(request,response);
         }else{
           request.setAttribute("createErrorMessage","空白の部分があります。すべての項目を入力してください。");
-          RequestDispatcher dispatcher = request.getRequestDispatcher("/Create.jsp");
+          RequestDispatcher dispatcher = request.getRequestDispatcher("/CreateServlet");
           dispatcher.forward(request,response);
         }
         

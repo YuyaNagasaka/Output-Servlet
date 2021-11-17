@@ -10,19 +10,20 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <nav id="nav">
-      <ul style = "display: flex; list-style-type: none; text-align: center;">
-        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Welcome.jsp">トップ</a></li>
-        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Register.jsp">会員登録</a></li>
-        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Login.jsp">ログイン</a></li>
-     </ul>
-    </nav>
-    <h1 class ="mt-5 ml-5">Output of Habits ～ 投稿型アウトプットアプリ ～</h1>
     <% if(logoutMessage != null){%>
       <div class="alert alert-success" role="alert"> 
          <%= logoutMessage %>
       </div>
     <%}%>
+    <nav class="navbar navbar-dark bg-dark">
+      <ul style = "display: flex; list-style-type: none; text-align: center;">
+        <li class = mr-3><a href="/application/WelcomeServlet" class = "text-white">トップ</a></li>
+        <li class ="mr-3"><a href="/application/RegisterServlet" class = "text-white">会員登録</a></li>
+        <li class ="mr-3"><a href="/application/LoginServlet" class = "text-white">ログイン</a></li>
+      </ul>
+    </nav>
+    <h1 class ="mt-5 ml-5">Output of Habits ～ 投稿型アウトプットアプリ ～</h1>
+    
     <form action = "/application/RegisterServlet" method="get">
       <button class="btn btn-success btn-lg w-50 mt-5 ml-5" type="submit" >会員登録</button>
     </form>
