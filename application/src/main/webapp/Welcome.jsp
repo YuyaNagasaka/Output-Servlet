@@ -17,17 +17,17 @@
         <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Login.jsp">ログイン</a></li>
      </ul>
     </nav>
-    <h1>Output of Habits ～ 投稿型アウトプットアプリ ～</h1>
+    <h1 class ="mt-5 ml-5">Output of Habits ～ 投稿型アウトプットアプリ ～</h1>
     <% if(logoutMessage != null){%>
       <div class="alert alert-success" role="alert"> 
          <%= logoutMessage %>
       </div>
     <%}%>
     <form action = "/application/RegisterServlet" method="get">
-      <input type = submit value = "会員登録"><br>
+      <button class="btn btn-success btn-lg w-50 mt-5 ml-5" type="submit" >会員登録</button>
     </form>
     <form action = "/application/LoginServlet" method="get">
-      <input type = submit value = "ログイン"><br>
+      <button class="btn btn-info btn-lg w-50 mt-5 ml-5" type="submit">ログイン</button><br>
     </form>
   </body>
 </html>

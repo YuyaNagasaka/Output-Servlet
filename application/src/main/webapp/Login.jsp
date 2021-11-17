@@ -18,7 +18,7 @@
         <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Login.jsp">ログイン</a></li>
      </ul>
     </nav>
-    <h1>ログイン</h1>
+    <h1 class = "mt-5 ml-5">ログイン</h1>
     <% if(loginErrorMessage1 != null){%>
       <div class="alert alert-danger" role="alert">
         <%= loginErrorMessage1 %>
@@ -30,9 +30,9 @@
       </div>
     <%}%>
     <form action = "/application/LoginServlet" method="post">
-      ユーザー名　<input type = "text" name="name"><br>
-      パスワード　<input type = "password" name = "password"><br>
-      <input type = submit value = "ログイン">
+      <div class = "mt-3 ml-5">ユーザー名　<input type = "text" name="name"></div>
+      <div class = "mt-3 ml-5">パスワード　<input type = "password" name = "password"></div>
+      <button class="btn btn-info btn-lg mt-3 ml-5" type="submit">ログイン</button>
     </form>
   </body>
 </html>

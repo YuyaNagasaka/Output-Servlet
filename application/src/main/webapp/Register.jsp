@@ -16,16 +16,16 @@
         <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Login.jsp">ログイン</a></li>
      </ul>
     </nav>
-    <h1>会員登録</h1>
+    <h1 class = "mt-5 ml-5">会員登録</h1>
     <% if(registerErrorMessage != null){%>
       <div class="alert alert-danger" role="alert">
         <%= registerErrorMessage %>
       </div>
     <%}%>
     <form action = "/application/RegisterServlet" method="post">
-      ユーザー名　<input type = "text" name="name"><br>
-      パスワード　<input type = "password" name = "password"><br>
-      <input type = submit value = "会員登録">
+      <div class = "mt-3 ml-5">ユーザー名　<input type = "text" name="name"></div>
+      <div class = "mt-3 ml-5">パスワード　<input type = "password" name = "password"></div>
+      <button class="btn btn-success btn-lg mt-3 ml-5" type="submit">会員登録</button>
     </form>
   </body>
 </html>
