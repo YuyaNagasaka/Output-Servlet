@@ -25,15 +25,8 @@ public class UpdateDAO {
 		    statement.setString(2,info.getDescription());
 		    statement.setString(3,info.getKeyword());
 		    statement.setInt(4,info.getId());
-		    int result = statement.executeUpdate();//SQL文の実行 追加したデータの行数が戻り値になる
-		      
-		      if(result != 0) {
-		        System.out.println("更新成功");
-		      }else {
-		   	    System.out.println("更新失敗");
-		      }
-		    }
-		    
+		    statement.executeUpdate();//SQL文の実行 追加したデータの行数が戻り値になる
+		  }
 		    catch(SQLException e) {
 		      e.printStackTrace();
 		    }
