@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <% String createSuccessMessage =(String)request.getAttribute("createSuccessMessage");%>
 <% String deleteSuccessMessage =(String)request.getAttribute("deleteSuccessMessage");%>
+<% String updateSuccessMessage =(String)request.getAttribute("updateSuccessMessage");%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -23,12 +24,17 @@
     <% if(deleteSuccessMessage != null){%>
       <p style = "color:red;"><%= deleteSuccessMessage %></p>
     <%}%>
+    <% if(updateSuccessMessage != null){%>
+      <p style = "color:lime;"><%= updateSuccessMessage %></p>
+    <%}%>
+    
     <table>
       <tr>
         <th>タイトル</th>
         <th>説明</th>
         <th>関連情報</th>
         <th>削除</th>
+        <th>編集</th>
       </tr>
       <c:forEach var="list" items="${list}">
       <tr>
@@ -36,6 +42,7 @@
         <td><c:out value="${list.description}"/></td>
         <td><c:out value="${list.keyword}"/></td>
         <td><a href="/application/DeleteServlet?id=${list.id}">削除</a></td>
+        <td><a href="/application/EditServlet?id=${list.id}&${title=list.title}& ${description=list.description} & keyword = ${list.keyword}">編集</a></td>
       </tr>
       </c:forEach>
     </table>
