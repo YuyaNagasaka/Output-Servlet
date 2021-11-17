@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
 <% String createSuccessMessage =(String)request.getAttribute("createSuccessMessage");%>
+<% String deleteSuccessMessage =(String)request.getAttribute("deleteSuccessMessage");%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -12,12 +13,31 @@
     <nav id="nav">
      <ul style = "display: flex; list-style-type: none; text-align: center;">
         <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Create.jsp">新規投稿</a></li>
-        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/Index.jsp">投稿一覧</a></li>
+        <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/IndexServlet">投稿一覧</a></li>
         <li style ="margin-top: 10px; margin-right: 10px;"><a href="/application/LogoutServlet">ログアウト</a></li>
      </ul>
     </nav>
     <% if(createSuccessMessage != null){%>
       <p style = "color:lime;"><%= createSuccessMessage %></p>
     <%}%>
+    <% if(deleteSuccessMessage != null){%>
+      <p style = "color:red;"><%= deleteSuccessMessage %></p>
+    <%}%>
+    <table>
+      <tr>
+        <th>タイトル</th>
+        <th>説明</th>
+        <th>関連情報</th>
+        <th>削除</th>
+      </tr>
+      <c:forEach var="list" items="${list}">
+      <tr>
+        <td><c:out value="${list.title}"/></td>
+        <td><c:out value="${list.description}"/></td>
+        <td><c:out value="${list.keyword}"/></td>
+        <td><a href="/application/DeleteServlet?id=${list.id}">削除</a></td>
+      </tr>
+      </c:forEach>
+    </table>
   </body>
 </html>
