@@ -39,7 +39,7 @@ public class RegisterServlet extends HttpServlet {
 	    RegisterDAO register = new RegisterDAO();
 	    User result = register.Register(user);
 	    HttpSession session = request.getSession();
-    	session.setAttribute("register",result);
+    	session.setAttribute("user",result);
 	    
     	request.setAttribute("registerSuccessMessage","会員登録に成功しました");
 	    RequestDispatcher dispatcher = request.getRequestDispatcher("/Create.jsp");

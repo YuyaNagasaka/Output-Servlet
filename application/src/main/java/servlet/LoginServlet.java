@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
 	    User result = login.Login(user);
 	    if(result != null) {
 	    	HttpSession session = request.getSession();
-	    	session.setAttribute("login",result);
+	    	session.setAttribute("user",result);
 	    	request.setAttribute("loginSuccessMessage","ログインに成功しました");
 	        RequestDispatcher dispatcher = request.getRequestDispatcher("/Create.jsp");
 	        dispatcher.forward(request, response);

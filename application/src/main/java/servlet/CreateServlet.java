@@ -35,29 +35,20 @@ public class CreateServlet extends HttpServlet {
 		String title = request.getParameter("title");
         String description = request.getParameter("description");
         String keyword = request.getParameter("keyword");
-        User register = (User)session.getAttribute("register");
-        User login =(User)session.getAttribute("login");
+        User user = (User)session.getAttribute("user");
         
-        int register_id =0;
-        int login_id =0;
+        int user_id =0;
         
-        if(register != null) {
-          register_id = register.getId();
-        }
-        
-        if(login != null) {
-          login_id = login.getId();
+        if(user != null) {
+          user_id = user.getId();
         }
         
         if(!title.isEmpty() && !description.isEmpty() && !keyword.isEmpty()) {
           output.setTitle(title);
           output.setDescription(description);
           output.setKeyword(keyword);
-          if(register_id != 0){
-          output.setUserId(register_id);
-          }
-          if(login_id!=0) {
-            output.setUserId(login_id);
+          if(user_id != 0){
+          output.setUserId(user_id);
           }
           
           CreateDAO create = new CreateDAO();
