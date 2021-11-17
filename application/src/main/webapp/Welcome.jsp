@@ -19,7 +19,9 @@
     </nav>
     <h1>Output of Habits ～ 投稿型アウトプットアプリ ～</h1>
     <% if(logoutMessage != null){%>
-      <p style = "color:lime;"><%= logoutMessage %></p>
+      <div class="alert alert-success" role="alert"> 
+         <%= logoutMessage %>
+      </div>
     <%}%>
     <form action = "/application/RegisterServlet" method="get">
       <input type = submit value = "会員登録"><br>

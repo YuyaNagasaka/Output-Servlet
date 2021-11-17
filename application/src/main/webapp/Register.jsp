@@ -18,7 +18,9 @@
     </nav>
     <h1>会員登録</h1>
     <% if(registerErrorMessage != null){%>
-      <p style = "color:red;"><%= registerErrorMessage %></p>
+      <div class="alert alert-danger" role="alert">
+        <%= registerErrorMessage %>
+      </div>
     <%}%>
     <form action = "/application/RegisterServlet" method="post">
       ユーザー名　<input type = "text" name="name"><br>

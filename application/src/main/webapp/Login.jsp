@@ -20,10 +20,14 @@
     </nav>
     <h1>ログイン</h1>
     <% if(loginErrorMessage1 != null){%>
-      <p style = "color:red;"><%= loginErrorMessage1 %></p>
+      <div class="alert alert-danger" role="alert">
+        <%= loginErrorMessage1 %>
+      </div>
     <%}%>
     <% if(loginErrorMessage2 != null){%>
-      <p style = "color:red;"><%= loginErrorMessage2 %></p>
+      <div class="alert alert-danger" role="alert">
+        <%= loginErrorMessage2 %>
+      </div>
     <%}%>
     <form action = "/application/LoginServlet" method="post">
       ユーザー名　<input type = "text" name="name"><br>

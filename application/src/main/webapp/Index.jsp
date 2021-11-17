@@ -18,7 +18,9 @@
      </ul>
     </nav>
     <% if(deleteSuccessMessage != null){%>
-      <p style = "color:red;"><%= deleteSuccessMessage %></p>
+      <div class="alert alert-danger" role="alert">
+        <%= deleteSuccessMessage %>
+      </div>
     <%}%>
     <table>
       <tr>

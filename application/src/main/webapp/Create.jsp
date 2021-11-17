@@ -24,20 +24,33 @@
     </nav>
     <h1>投稿画面</h1>
      <% if(createSuccessMessage != null){%>
-      <p style = "color:lime;"><%= createSuccessMessage %></p>
+       <div class="alert alert-success" role="alert">
+         <%= createSuccessMessage %>
+       </div>>
     <%}%>
     
     <% if(updateSuccessMessage != null){%>
-      <p style = "color:lime;"><%= updateSuccessMessage %></p>
+      <div class="alert alert-success" role="alert">
+        <%= updateSuccessMessage %>
+      </div>
     <%}%>
+    
     <% if(createErrorMessage != null){%>
-      <p style = "color:red;"><%= createErrorMessage %></p>
+      <div class="alert alert-danger" role="alert">
+        <%= createErrorMessage %>
+      </div>
     <%}%>
+    
     <% if(loginSuccessMessage != null){%>
-      <p style = "color:lime;"><%= loginSuccessMessage %></p>
+      <div class="alert alert-success" role="alert">
+        <%= loginSuccessMessage %>
+      </div>>
     <%}%>
+    
     <% if(registerSuccessMessage != null){%>
-      <p style = "color:lime;"><%= registerSuccessMessage %></p>
+      <div class="alert alert-success" role="alert">
+        <%= registerSuccessMessage %>
+      </div>>
     <%}%>
     
     <form action = "/application/CreateServlet" method="Post">
