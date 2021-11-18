@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import model.Output;
 
 public class CreateDAO {
-  String url = "jdbc:mysql://localhost/application";
-  String user = "root";
-  String password = "Nagasaka0928";
+	  String url = "jdbc:mysql://test.cnrljbqlg5co.ap-northeast-1.rds.amazonaws.com/application";
+	  String user = "root";
+	  String password = "nagasaka0928"; 
   Connection conn = null;
   int result;
   public int Create(Output info) {

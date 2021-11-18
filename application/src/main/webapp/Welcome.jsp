@@ -23,8 +23,10 @@
          <div class = "ml-4"><%= logoutMessage %></div>
       </div>
     <%}%>
-    <h1 class ="mt-5 ml-5">Output of Habits ～ 投稿型アウトプットアプリ ～</h1>
-    
+    <h1 class ="mt-5 ml-5">Servlet Application</h1>
+    <h2 class ="mt-5 ml-5">制作目的　アウトプット</h2>
+    <h2 class ="mt-5 ml-5">制作期間　1週間</h2>
+    <h2 class ="mt-5 ml-5">主な機能　1.会員登録機能　2.CRUD機能</h2>
     <form action = "/application/RegisterServlet" method="get">
       <button class="btn btn-success btn-lg w-50 mt-5 ml-5" type="submit" >会員登録</button>
     </form>

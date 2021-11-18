@@ -13,9 +13,9 @@ public class LoginDAO {
   User user_info = new User();
   Connection conn = null; //DBへの接続や切断を行う	
   
-  String url = "jdbc:mysql://localhost/application";
+  String url = "jdbc:mysql://test.cnrljbqlg5co.ap-northeast-1.rds.amazonaws.com/application";
   String user = "root";
-  String password = "Nagasaka0928";
+  String password = "nagasaka0928"; 
 
   public User Login(User info) {
     try {

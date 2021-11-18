@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import model.Output;
 
 public class UpdateDAO {
-	  String url = "jdbc:mysql://localhost/application";
+	String url = "jdbc:mysql://test.cnrljbqlg5co.ap-northeast-1.rds.amazonaws.com/application";
 	  String user = "root";
-	  String password = "Nagasaka0928";
+	  String password = "nagasaka0928"; 
 	    
 	  public void Update(Output info) {
 	    Connection conn = null;

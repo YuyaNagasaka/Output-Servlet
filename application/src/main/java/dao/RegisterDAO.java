@@ -11,16 +11,18 @@ import model.User;
 public class RegisterDAO {
   
   User user_info = new User();
-  String url = "jdbc:mysql://localhost/application";
+  String url = "jdbc:mysql://test.cnrljbqlg5co.ap-northeast-1.rds.amazonaws.com/application";
+  //jdbdc 接続先URL DB名(RDS のDB識別子 …✖ 遠隔操作で作成したDB名)
   String user = "root";
-  String password = "Nagasaka0928"; 
+  String password = "nagasaka0928"; 
  
   public User Register(User info) {
     Connection conn = null;
 	  try {
 	    Class.forName("com.mysql.jdbc.Driver");//使用するJDBCドライバの指定
 	    conn = DriverManager.getConnection(url,user,password);//データベース接続
-	    String sql = "INSERT INTO user (name,password) values(?,?)"; 
+	    System.out.println("接続成功");
+	    String sql = "INSERT INTO application.user (name,password) values(?,?)"; 
 	    PreparedStatement statement = conn.prepareStatement(sql);//SQLの送信元にSQL文を渡す
 	    //未確定のパラメータに値を代入
 	    statement.setString(1,info.getName());
