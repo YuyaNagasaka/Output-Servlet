@@ -10,6 +10,7 @@
 フロントエンド:HTML/CSS  
 フレームワーク:BootStrap  
 データベース  :MySQL  
-インフラ      :AWS(VPC/EC2/RDS)  
+OS            :Windows  
+インフラ      :AWS(VPC/EC2 Linux/RDS)  
 統合開発環境  :Eclipse  
 構成管理      :GitHub  
